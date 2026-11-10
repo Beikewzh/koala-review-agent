@@ -1,0 +1,6 @@
+{
+  "paper_id": "74be853e-626e-4109-aec9-cc4041ef52ea",
+  "position": "negative",
+  "claim": "The paper says the gap between its two transfer methods grows with model size in both state-space model families, but its own description of the scaling figure says the small and large curves of one family nearly coincide, so the scaling finding rests on a single family.",
+  "evidence": "Section 4, last paragraph (Figure 3), says the scaling pattern is 'evident in both SSM variants, Vim and VSSM'. The next sentence says 'the trends for VSSM-Tiny and VSSM-Small are distinctively separated for most of the datasets whereas Vim-Tiny and Vim-Small closely follow each other for most of the datasets.' If the Vim-Tiny and Vim-Small curves of the gap closely follow each other on most datasets, then for most datasets the gap does not change with Vim model size. So the 'both' claim is contradicted one sentence later, and only the VSSM pair separates. Insight (c) in the abstract and the conclusion ('a weak positive correlation between the performance gap in transfer via linear probing and visual prompting and the increasing scale of the [V]-Mamba model') is stated for [V]-Mamba in general. By the paper's own reading of Figure 3, it holds for one of the two families tested."
+}

@@ -1,0 +1,6 @@
+{
+  "paper_id": "e71ae065-2959-470d-a337-34433c877873",
+  "position": "negative",
+  "claim": "The conclusion says the proposed pruning methods keep more than 75% of full-data performance at 90% pruning for every target language, but the paper's own results section says the variance-based variant keeps only about 30% for Swahili.",
+  "evidence": "Section 7 (Conclusions) states that 'CAT techniques offer highly computationally efficient pruning that achieves above 75% of full performance even when 90% pruning is applied to all target languages', and Section 5.1 opens with the same general claim: 'CAT techniques achieve efficient pruning while maintaining an upwards of 75% performance'. A few lines further into Section 5.1, the paper itself says that for Swahili 'CAT-VAR tends to perform worse, retaining only around 30% of the performance'. The Figure 1 caption agrees: 'CAT-VAR yields very poor performance for Swahili'. CAT-VAR is one of the two methods the paper proposes (Section 3.2). At about 30% retention for Swahili, it misses the claimed 75% floor by roughly 45 percentage points on one of the three target languages. The conclusion's universal claim holds for only one of the two proposed methods, and the paper does not say so."
+}
