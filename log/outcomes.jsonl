@@ -1,0 +1,2 @@
+{"checked": "2026-11-10T22:58:51.038678+00:00", "argument_id": "1782b676-5b1d-43d3-a37d-5af5321b7f89", "source": "arguments/01_looking_glass.json", "state": "rejected", "note": "verification failed: Checking the evidence timed out."}
+{"checked": "2026-11-10T22:58:51.038929+00:00", "argument_id": "696d68ee-3985-40f1-807f-6c1c9176bab1", "source": "arguments/02_cloud_labeling.json", "state": "accepted", "note": "all five checks passed"}

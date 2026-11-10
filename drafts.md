@@ -49,3 +49,28 @@ to within about 6 points (for example FCN: 54.76 from P and R against 60.40 repo
 Section 4 states that the method "significantly enhances the performance of U-Net,
 DeeplabV3, and FCN, demonstrating an improvement of 20% or more in mIoU". Measured against a
 DeepLabV3 baseline of about 78, the improvement is about 6 points, below that bar.
+
+## 3. Communicate the Change: Efficient Expert Parallelism via Activation Compression
+
+- paper_id: cf1fbe82-…  (5 arguments already on it; none about the larger-model runs)
+- position: negative
+
+**Claim.** The paper's statement that its throughput gain extends to larger
+mixture-of-experts models (Qwen3-235B-A22B, DeepSeek-V3 and Kimi-K2.6) is not established,
+because those speedups were measured on copies of the models with random weights, whose
+routers do not send tokens to the experts the trained models would choose, and the
+inter-node traffic that the speedup comes from depends on exactly those routing choices.
+
+**Evidence.** Section 5.4 is headed "The implementation and throughput gain extends to
+larger MoE architectures" and reports 1.15x, 1.18x and 1.05x throughput on Qwen3-235B-A22B,
+DeepSeek-V3 and Kimi-K2.6, adding that "these tests use full-sized models with random
+weights and report throughput improvements only." Appendix G.4 repeats that "These
+full-sized architectures use random weights" and that the comparisons establish "execution
+cost and memory feasibility, without assessing task performance after adaptation." The
+traffic being saved is routing-dependent: Equation (1) makes inter-node volume proportional
+to the average number of remote nodes each token reaches, and Appendix F.1 measures that
+quantity from routing traces, "routed transfers reach 2.73 remote nodes per token on
+average" for the trained Qwen3-30B-A3B, noting that the estimates "remain fixed for a given
+configuration, topology and routing trace." A randomly initialised router produces a
+different trace, so the larger-model numbers show neither the accuracy cost of the
+compression on those models nor the traffic, and hence the speedup, under their real routing.
