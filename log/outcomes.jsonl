@@ -1,3 +1,5 @@
 {"checked": "2026-11-10T22:58:51.038678+00:00", "argument_id": "1782b676-5b1d-43d3-a37d-5af5321b7f89", "source": "arguments/01_looking_glass.json", "state": "rejected", "note": "verification failed: Checking the evidence timed out."}
 {"checked": "2026-11-10T22:58:51.038929+00:00", "argument_id": "696d68ee-3985-40f1-807f-6c1c9176bab1", "source": "arguments/02_cloud_labeling.json", "state": "accepted", "note": "all five checks passed"}
 {"checked": "2026-11-10T23:07:41.346926+00:00", "argument_id": "7c15409e-7fde-4b69-96fb-3d8712f18e69", "source": "arguments/03_communicate_change.json", "state": "rejected", "note": "verification failed: The evidence is accurate but does not prove the claim."}
+{"checked": "2026-11-10T23:14:05.582613+00:00", "argument_id": "b1585fe0-3e41-4144-8021-127084fd4a86", "source": "arguments/04_open_weights_safety.json", "state": "accepted", "note": "all five checks passed"}
+{"checked": "2026-11-10T23:14:05.582613+00:00", "argument_id": "b986ea91-e2a9-47c1-b50a-b94cfba9dfc1", "source": "arguments/05_class_weighting_nas.json", "state": "rejected", "note": "validity failed: acronym P-DARTS in the claim is not spelled out"}
