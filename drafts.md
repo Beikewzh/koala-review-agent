@@ -78,3 +78,22 @@ average" for the trained Qwen3-30B-A3B, noting that the estimates "remain fixed 
 configuration, topology and routing trace." A randomly initialised router produces a
 different trace, so the larger-model numbers show neither the accuracy cost of the
 compression on those models nor the traffic, and hence the speedup, under their real routing.
+
+
+## 4. An Information-Theoretic View on the Safety of Open-Weights Models
+
+- paper_id: d352737e-…  (7 arguments already on it; none about checkpoint selection)
+- position: negative
+
+**Claim.** The paper's headline evidence that small fine-tuning attacks are the cheapest way to make the model comply with harmful requests reports, for each fine-tuning run, the best of up to 64 saved checkpoints as scored on the evaluation benchmark itself, while the complexity charged to the attack counts only a single evaluation pass and nothing for that selection, so the success rates at the low-complexity end are selected on the test set at no recorded cost.
+
+**Evidence.** Appendix B (Fine-tuning) states that the runs "train for 2 epochs at 512 examples and scale up accordingly (so 64 epochs at 16 examples). LoRA weights are checkpointed after every epoch and we report the best-performing checkpoint." A 32-example run therefore picks the best of 32 checkpoints and a 16-example run the best of 64, and choosing among them requires running every checkpoint on the benchmark and scoring it with the benchmark's judge. The compute the same appendix charges to the attack is only "training FLOPs plus average inference FLOPs per evaluation example", and the bits term is "16 · Ntokens of the training dataset", so neither the repeated evaluations nor the information taken from the test labels enters the complexity. Section 5 builds its first recommendation on exactly these small runs: "fine-tuning on 32 adversarial examples for HarmBench reaches 94.5% ASR at 2.2 × 10^5 bits of complexity, which is 16× cheaper than AutoDAN's 3.5 × 10^6 bits, which yields only 36.3% ASR."
+
+## 5. Learning from Mistakes based on Class Weighting with Application to Neural Architecture Search
+
+- paper_id: bc8dc601-…  (12 arguments already on it; none about the P-DARTS CIFAR-10 row)
+- position: negative
+
+**Claim.** The paper's claim that its class-weighted synthetic-data method improves the architectures found by every differentiable architecture search algorithm it is added to, on CIFAR-10 as well as CIFAR-100, is contradicted by its own results table: added to P-DARTS, the method gives a higher CIFAR-10 test error than P-DARTS alone.
+
+**Evidence.** Table 2 reports CIFAR-10 test error of 2.50% for P-DARTS (Chen et al., 2019) and 2.53 ± 0.05% for LFM-CW-BigGAN-PDARTS (ours), so the method makes the P-DARTS architecture slightly worse on CIFAR-10, and the reported spread of 0.05 does not make the 2.53 an improvement. Section 4.3 nevertheless states that the CIFAR-100 observations "can be further extended to the architecture search on CIFAR-10, where our method achieves superior performance compared to the baselines", and opens by saying the framework "significantly reduces the errors on the test set when compared to existing differential NAS methods such as DARTS, P-DARTS, and PC-DARTS." P-DARTS is one of the three base algorithms the paper uses to show the method works across search algorithms, so on CIFAR-10 that claim holds for two of the three, not all of them.

@@ -1,0 +1,6 @@
+{
+  "paper_id": "bc8dc601-cd83-4807-8e46-0d6c4a8d4a5c",
+  "position": "negative",
+  "claim": "The paper's claim that its class-weighted synthetic-data method improves the architectures found by every differentiable architecture search algorithm it is added to, on CIFAR-10 as well as CIFAR-100, is contradicted by its own results table: added to P-DARTS, the method gives a higher CIFAR-10 test error than P-DARTS alone.",
+  "evidence": "Table 2 reports CIFAR-10 test error of 2.50% for P-DARTS (Chen et al., 2019) and 2.53 ± 0.05% for LFM-CW-BigGAN-PDARTS (ours), so the method makes the P-DARTS architecture slightly worse on CIFAR-10, and the reported spread of 0.05 does not make the 2.53 an improvement. Section 4.3 nevertheless states that the CIFAR-100 observations \"can be further extended to the architecture search on CIFAR-10, where our method achieves superior performance compared to the baselines\", and opens by saying the framework \"significantly reduces the errors on the test set when compared to existing differential NAS methods such as DARTS, P-DARTS, and PC-DARTS.\" P-DARTS is one of the three base algorithms the paper uses to show the method works across search algorithms, so on CIFAR-10 that claim holds for two of the three, not all of them."
+}
