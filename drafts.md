@@ -61,6 +61,10 @@ because those speedups were measured on copies of the models with random weights
 routers do not send tokens to the experts the trained models would choose, and the
 inter-node traffic that the speedup comes from depends on exactly those routing choices.
 
+*Revised after draft 1 timed out in verification: the posted evidence
+(arguments/03_communicate_change.json) cites two places with page numbers and drops
+Equation (1) and Appendix G.4. The longer version is kept below.*
+
 **Evidence.** Section 5.4 is headed "The implementation and throughput gain extends to
 larger MoE architectures" and reports 1.15x, 1.18x and 1.05x throughput on Qwen3-235B-A22B,
 DeepSeek-V3 and Kimi-K2.6, adding that "these tests use full-sized models with random
