@@ -1,0 +1,51 @@
+# Draft arguments (not posted)
+
+Each draft is checked against the platform's five checks before posting. Nothing here is
+on the platform until Zihan approves it.
+
+## 1. Through the Looking Glass: Directly Reading and Writing Transformers
+
+- paper_id: 71bf4628-…  (arXiv 2609.10210; 2 arguments already on it, both positive)
+- position: negative
+
+**Claim.** The paper's finding that the largest models it tests need only about two
+components to reproduce a prediction is not established, because each reported size is a
+median taken only over the predictions on which the paper's search for a sufficient set of
+components succeeded, and that search fails on a large share of the predictions of exactly
+those large models.
+
+**Evidence.** Table 40 (Section 6.3) gives, per model, how many of the sampled predictions
+the search verified, and its caption states that "the size and the controls are over those";
+the text adds that the remaining predictions are "excluded from everything to its right."
+The verified counts are 32 of 60 predictions for Qwen2.5 7B, 47 of 60 for Mistral 7B, 65 of
+150 for Qwen2.5 1.5B and 60 of 150 for Llama-3.2 1B, against 131 of 150 for GPT-2 124M and
+141 of 150 for OPT 125M. On the predictions where the search fails, the set is not small: on
+the paper's own baseline, Section 2.5 reports that "where the repair never converges it has
+already built a mean of 489 components, at most 962 or two percent of the model, and the
+token still does not come out." The abstract nevertheless states that "the sufficient set
+runs from two components to sixteen", and Section 6.3 that "the largest models sit at its
+small end: Mistral 7B and Qwen2.5 7B rest on two components each", although for Qwen2.5 7B
+almost half of the sampled predictions (28 of 60) have no sufficient set found at all.
+
+## 2. Adaptive-Labeling for Enhancing Remote Sensing Cloud Understanding
+
+- paper_id: 28c31825-…  (arXiv 2311.05198; 7 arguments already on it, none about this)
+- position: negative
+
+**Claim.** The paper's largest reported gain, lifting the DeepLabV3 segmentation network
+from 44.02 to 83.95 mean intersection-over-union, rests on a baseline score that contradicts
+the baseline's own precision and recall in the same table, and with a score consistent with
+those numbers the gain shrinks from about 40 points to about 6.
+
+**Evidence.** Table 1 (and again Table 2) reports DeepLabV3 at mIoU 44.02 with precision
+86.25, recall 89.53, F1-score 86.73 and overall accuracy 96.07. For the cloud class,
+intersection-over-union is fixed by precision P and recall R as 1/(1/P + 1/R - 1), which
+gives 78.35 for these values. If the mIoU instead averages the cloud and non-cloud classes,
+reaching 44.02 would need a non-cloud IoU of about 9.7, but with 96.07 percent of pixels
+classified correctly at most 3.93 percent are errors, which forces the non-cloud IoU to about
+95 and the mean to about 87. Every other row of Table 1 is consistent with the same formula
+to within about 6 points (for example FCN: 54.76 from P and R against 60.40 reported; U-Net:
+72.74 against 73.69; DeepLabV3 + CAL: 81.61 against 83.95). The text relies on the outlier:
+Section 4 states that the method "significantly enhances the performance of U-Net,
+DeeplabV3, and FCN, demonstrating an improvement of 20% or more in mIoU". Measured against a
+DeepLabV3 baseline of about 78, the improvement is about 6 points, below that bar.

@@ -1,0 +1,33 @@
+[
+  {
+    "arxiv_id": "2609.10781",
+    "title": "From Connectivity to Rewards: Dense Reward Learning with Directed State Graphs",
+    "abstract": "The integration of graphs with Goal-Conditioned Hierarchical Reinforcement Learning (GCHRL) has received increasing attention, as graphs naturally encode task hierarchies for effective subgoal sampling. However, existing methods often overlook intrinsic connectivity information, failing to fully leverage the underlying topology for efficient learning. Most graph-based GCHRL methods use the graph as a stochastic sampling tool rather than as an environmental model that encodes connectivity and state-accessibility information. This limitation is particularly acute in quasimetric environments, where the inherent asymmetry of state transitions poses a fundamental challenge to stable policy learning and robust path planning. In this paper, we address these problems by introducing a state connectivity model designed to predict pairwise state connectivity strength in asymmetric environments. We transform these connectivity strengths into scalar auxiliary dense rewards, providing continuous guidance across multiple hierarchical levels. We demonstrate that our proposed framework, Graph-Guided Quasimetric Dense Reward (G2QDR), can theoretically be integrated into any existing GCHRL architecture, and the state connectivity model is efficiently implemented via a neural network trained on a directed state graph generated during exploration. Empirical results across a wide range of sparse reward environments indicate that, in general, G2QDR can enhance the performance of baseline GCHRL approaches with acceptable computational overhead.",
+    "domain": "Reinforcement Learning",
+    "pdf_url": "https://arxiv.org/pdf/2609.10781",
+    "arxiv_categories": [
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2608.29481",
+    "title": "SIC-Agents: Benchmarking and Building an Adaptive Simulator for Pediatric Serious Illness Communication Training",
+    "abstract": "Pediatric serious illness communication (SIC) is critically important, yet scalable communication training for clinicians remains limited. Compared with other dialogue simulation settings, pediatric SIC poses additional challenges, including multi-party interactions, response to parental distress and strong dependence on feedback dynamics. Existing LLM-based simulators optimize generic dialogue quality rather than curriculum-contingent behavior required for effective SIC training. In collaboration with educators and pediatric clinicians, we introduce the first benchmark suite and simulation framework tailored to pediatric SIC training. Our benchmarks, PitfallBench and DialogueBench, evaluate simulators both at the turn-level and across full dialogues. We further propose SIC-Agents, a self-improving framework that generates a clinician-editable skill document to guide simulator behavior. Our experiments show that SIC-Agents outperforms static expert prompting. To support future research, we release our benchmarks for parent simulation in pediatric SIC at https://github.com/Beikewzh/sic-benchmarks",
+    "domain": "NLP",
+    "pdf_url": "https://arxiv.org/pdf/2608.29481",
+    "arxiv_categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2511.10872",
+    "title": "Incorporating Spatial Information into Goal-Conditioned Hierarchical Reinforcement Learning via Graph Representations",
+    "abstract": "The integration of graphs with Goal-conditioned Hierarchical Reinforcement Learning (GCHRL) has recently gained attention, as intermediate goals (subgoals) can be effectively sampled from graphs that naturally represent the overall task structure in most RL tasks. However, existing approaches typically rely on domain-specific knowledge to construct these graphs, limiting their applicability to new tasks. Other graph-based approaches create graphs dynamically during exploration but struggle to fully utilize them, because they have problems passing the information in the graphs to newly visited states. Additionally, current GCHRL methods face challenges such as sample inefficiency and poor subgoal representation. This paper proposes a solution to these issues by developing a graph encoder-decoder to evaluate unseen states. Our proposed method, Graph-Guided sub-Goal representation Generation RL (G4RL), can be incorporated into any existing GCHRL method when operating in environments with primarily symmetric and reversible transitions to enhance performance across this class of problems. We show that the graph encoder-decoder can be effectively implemented using a network trained on the state graph generated during exploration. Empirical results indicate that leveraging high and low-level intrinsic rewards from the graph encoder-decoder significantly enhances the performance of state-of-the-art GCHRL approaches with an extra small computational cost in dense and sparse reward environments.",
+    "domain": "Reinforcement Learning",
+    "pdf_url": "https://arxiv.org/pdf/2511.10872",
+    "arxiv_categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  }
+]
